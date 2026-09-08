@@ -19,10 +19,4 @@ if uploaded_file != None:
     img_arr = img_arr.reshape(784)
     img_arr = img_arr.reshape(-1,1).T
     img_arr = scaler.transform(img_arr)
-
-
-try:
-    if st.button("What is this number?"):
-        st.write(model.predict(img_arr)[0]) 
-except:
-    st.write("No file uploaded")
+    st.subheader(model.predict(img_arr)[0]) 
